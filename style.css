@@ -1,0 +1,182 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #E50914; /* Netflix Red */
+    --dark-color: #141414;    /* Netflix Dark Background */
+    --light-dark-color: #1d1d1d;
+    --gray-color: #808080;
+    --light-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Bebas Neue', sans-serif; /* A font similar to Netflix's */
+    letter-spacing: 1px;
+}
+
+/* --- Header --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    padding: 20px 50px;
+    z-index: 10;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Add a solid background to header on scroll (you'd need JS for this, but can be faked for static) */
+/* For a static version, you could just give it a solid background from the start */
+/* .main-header { background: #141414; } */
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh; /* Adjust as needed */
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://picsum.photos/seed/hero/1920/1080') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the left */
+    padding: 0 50px;
+    text-align: left;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.hero-content h3 {
+    font-size: 2rem;
+    color: var(--light-color);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 500px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- Project Rows --- */
+.main-content {
+    padding: 0 50px 50px 50px;
+}
+
+.project-row {
+    margin-bottom: 40px;
+}
+
+.row-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.row-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.project-card {
+    background: var(--light-dark-color);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.08); /* The iconic Netflix hover effect */
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9; /* Ensures all images have a consistent widescreen look */
+    object-fit: cover;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.main-footer {
+    border-top: 1px solid var(--gray-color);
+    padding: 20px 50px;
+    text-align: center;
+    color: var(--gray-color);
+}
